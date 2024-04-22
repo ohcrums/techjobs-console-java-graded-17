@@ -122,18 +122,22 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         // TODO - implement this method
 
-        // for each loop with job as HashMap, iterating over someJobs
-        for (HashMap<String, String> job : someJobs) {
-            // required formatting
-            System.out.println("\n*****");
-            // for each entry in job map
-            for (Map.Entry<String, String> entry : job.entrySet()) {
-                // print an entry key and value
-                System.out.println(entry.getKey() + ": " + entry.getValue());
+        // check if array is empty, state if so, proceed if not
+        if (someJobs.isEmpty()) {
+            System.out.print("No Results");
+        } else {
+            // for each loop with job as HashMap, populated by someJobs array list
+            for (HashMap<String, String> job : someJobs) {
+                // required formatting
+                System.out.println("\n*****");
+                // for each entry in job map
+                for (Map.Entry<String, String> entry : job.entrySet()) {
+                    // print an entry key and value
+                    System.out.println(entry.getKey() + ": " + entry.getValue());
+                }
+                System.out.println("*****");
             }
-            System.out.println("*****");
         }
-
-//        System.out.println("printJobs is not implemented yet");
     }
+
 }
