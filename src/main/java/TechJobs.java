@@ -118,8 +118,22 @@ public class TechJobs {
     }
 
     // Print a list of jobs
+    // someJobs is parameter, an arraylist called by JobData methods like JobData.findAll()
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        // TODO - implement this method
 
-        System.out.println("printJobs is not implemented yet");
+        // for each loop with job as HashMap, iterating over someJobs
+        for (HashMap<String, String> job : someJobs) {
+            // required formatting
+            System.out.println("\n*****");
+            // for each entry in job map
+            for (Map.Entry<String, String> entry : job.entrySet()) {
+                // print an entry key and value
+                System.out.println(entry.getKey() + ": " + entry.getValue());
+            }
+            System.out.println("*****");
+        }
+
+//        System.out.println("printJobs is not implemented yet");
     }
 }
