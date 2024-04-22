@@ -94,8 +94,28 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-        // TODO - implement this method
-        return null;
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        // for-in, for new hashmap row in allJobs arraylist, so it's scalable
+        for (HashMap<String, String> row : allJobs) {
+
+            // iterate field where field is all values from the allJobs hashmap
+            // .values() grabs all the values in the map and makes a new collection
+            for (String field : row.values()) {
+                // if the current field contains the @param value...
+                if (field.contains(value)) {
+                    // add the job (row) to the jobs list
+                    jobs.add(row);
+
+                    // explicit break to repeat for-in loop
+                    break;
+                }
+            }
+        } // done iterating
+
+        // send back arraylist
+        return jobs;
+
     }
 
     /**
