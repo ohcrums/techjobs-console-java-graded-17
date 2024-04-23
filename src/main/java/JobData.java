@@ -75,7 +75,8 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            // added toLowerCase()
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -102,8 +103,9 @@ public class JobData {
             // iterate field where field is all values from the allJobs hashmap
             // .values() grabs all the values in the map and makes a new collection
             for (String field : row.values()) {
+                // while converting field and value to lowercase...
                 // if the current field contains the @param value...
-                if (field.contains(value)) {
+                if (field.toLowerCase().contains(value.toLowerCase())) {
                     // add the job (row) to the jobs list
                     jobs.add(row);
 
